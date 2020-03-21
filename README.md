@@ -1,12 +1,13 @@
-
-
-- This gatsby project is repo for my website
-
 #### Commands
 
 ```sh
 $ yarn install
-$ gatsby develop
+
+//start the app
+$ gatsby develop 
+
+//build and deploy
+$ npm run deploy
 ```
 
 Reference:
