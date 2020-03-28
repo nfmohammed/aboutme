@@ -1,14 +1,14 @@
-#### Commands
 
-```sh
-$ yarn install
+Commands
 
-//start the app
-$ gatsby develop 
+    $ yarn install
 
-//build and deploy
-$ npm run deploy
-```
+    //start the app
+    $ gatsby develop 
+
+    //build and deploy
+    $ npm run deploy
+
 
 Reference:
 - https://github.com/donvito/donvito-gatsby-resume-starter

@@ -7,11 +7,16 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import AssignmentIcon from '@material-ui/icons/Assignment';
 import { green } from '@material-ui/core/colors';
 import Paper from '@material-ui/core/Paper';
 import { useStaticQuery, graphql } from "gatsby"
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
+import expediaLogo from "../images/expedia.jpg";
+import orbitzLogo from "../images/orbitz.jpg";
+import comericaLogo from "../images/comerica.jpg";
+import wexLogo from "../images/wex.jpg";
+import upromiseLogo from "../images/upromise.jpg"
+
 
 const breakpoints = createBreakpoints({});
 
@@ -34,11 +39,21 @@ const useStyles = makeStyles(theme => ({
       margin: 10,
       color: '#fff',
       backgroundColor: green[500]
+  },
+  logoItem: {
+    marginBottom: 10
   }
 }));
 
 export default function ResumeExperience() {
   const classes = useStyles();
+  const imageLogos = {
+    "expedia": expediaLogo,
+    "orbitz": orbitzLogo,
+    "comerica": comericaLogo,
+    "wex": wexLogo,
+    "upromise": upromiseLogo
+  }
 
   const data = useStaticQuery(graphql`
     query {
@@ -48,6 +63,7 @@ export default function ResumeExperience() {
             id
             position
             company
+            logos
             duration
             description
           }
@@ -66,9 +82,9 @@ export default function ResumeExperience() {
           {data.allExperienceJson.edges.map(s => (
             <ListItem alignItems="flex-start">
               <ListItemAvatar className={classes.avatarItem}>
-                <Avatar className={classes.greenAvatar} src="static/images/expedia-logo.jpg">
-                  
-                </Avatar>
+                {s.node.logos.map (logo => (
+                    <Avatar src={imageLogos[logo]} className={classes.logoItem}/>
+                ))}
               </ListItemAvatar>
               <ListItemText
                 primary=

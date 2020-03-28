@@ -2,6 +2,7 @@
   {
     "position": "Software Developer Engineer",
     "company": "Expedia Groups",
+    "logos": ["expedia"],
     "duration": "Jan 2017 to Present",
     "description": [
       "Worked in a high paced squad agile model",
@@ -26,6 +27,7 @@
   {
     "position": "Quality Engineer",
     "company": "Expedia, Orbitz, Comerica Bank, WrightExpress and Upromise",
+    "logos": ["expedia","orbitz","comerica","wex","upromise"],
     "duration": "2009 to 2014",
     "description":  [
       "5+ years of manual and automation experience with the above clients",
